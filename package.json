@@ -13,6 +13,7 @@
     "type": "git",
     "url": "git@github.com:mattcfox/aws-mfa.git"
   },
+  "bin": "./lib/src/entry.js",
   "keywords": [],
   "author": "Matt Fox",
   "license": "GPL-3.0-or-later",
