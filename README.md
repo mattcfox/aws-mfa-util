@@ -1,4 +1,4 @@
-# aws-mfa
+# aws-mfa-util
 
 This is a simple utility inspired by [broamski/aws-mfa](https://github.com/broamski/aws-mfa) to help manage MFA authentication to AWS, when using the API. It will replace the credentials tied to a profile with temporary credentials with MFA. Those can then be used normally with the profile until they expire.
 
@@ -7,7 +7,7 @@ This is a simple utility inspired by [broamski/aws-mfa](https://github.com/broam
 ### Auth
 
 ```
-Usage: aws-mfa auth [options]
+Usage: aws-mfa-util auth [options]
 
 Authenticate via MFA
 
@@ -25,7 +25,7 @@ Long lived credentials will be moved to a `<profile-no-mfa>` profile in the cred
 ### Configure
 
 ```
-Usage: aws-mfa configure [options]
+Usage: aws-mfa-util configure [options]
 
 Configure a MFA device
 

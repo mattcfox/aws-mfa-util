@@ -1,5 +1,5 @@
 {
-  "name": "aws-mfa",
+  "name": "aws-mfa-util",
   "description": "",
   "version": "1.0.0",
   "scripts": {
@@ -11,16 +11,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:mattcfox/aws-mfa.git"
+    "url": "git@github.com:mattcfox/aws-mfa-util.git"
   },
   "bin": "./lib/src/entry.js",
   "keywords": [],
   "author": "Matt Fox",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/mattcfox/aws-mfa/issues"
+    "url": "https://github.com/mattcfox/aws-mfa-util/issues"
   },
-  "homepage": "https://github.com/mattcfox/aws-mfa",
+  "homepage": "https://github.com/mattcfox/aws-mfa-util",
   "dependencies": {
     "@aws-sdk/client-sts": "3.38.0",
     "commander": "8.3.0",
