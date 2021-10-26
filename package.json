@@ -1,0 +1,37 @@
+{
+  "name": "aws-mfa",
+  "description": "",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier -w . && eslint --fix .",
+    "lint": "prettier -c . && eslint .",
+    "test": "echo later"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mattcfox/aws-mfa.git"
+  },
+  "keywords": [],
+  "author": "Matt Fox",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/mattcfox/aws-mfa/issues"
+  },
+  "homepage": "https://github.com/mattcfox/aws-mfa",
+  "dependencies": {
+    "@aws-sdk/client-sts": "3.38.0",
+    "commander": "8.3.0",
+    "configparser": "0.3.9"
+  },
+  "devDependencies": {
+    "@types/node": "12.20.35",
+    "@typescript-eslint/eslint-plugin": "5.2.0",
+    "@typescript-eslint/parser": "5.2.0",
+    "eslint": "8.1.0",
+    "eslint-config-prettier": "8.3.0",
+    "prettier": "2.4.1",
+    "typescript": "4.4.4"
+  },
+  "packageManager": "yarn@3.1.0"
+}
