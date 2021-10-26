@@ -1,0 +1,38 @@
+name: Version and release to NPM
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to bump to'
+        required: true
+        default: 'patch'
+
+jobs:
+  version-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+      - name: Setup git name/email
+        run: |
+          git config --global user.name 'CI'
+          git config --global user.email 'mattcfox@users.noreply.github.com'
+      - run: yarn install --immutable
+      - run: if [ -z "$(git status --porcelain)" ]; then true; else false; fi
+      - run: yarn version ${{ github.event.inputs.version }}
+      - run: git add .
+      - run: git commit -m "Bumped to $(node -p 'require(`./package.json`).version')"
+      - run: yarn buildPublish
+      - run: if [ -z "$(git status --porcelain)" ]; then true; else false; fi
+      - run: git push
+      - run: yarn npm publish
+        env:
+          YARN_NPM_AUTH_TOKEN: ${{ secrets.YARN_TOKEN }}
+      - uses: actions/setup-node@v2
+        with:
+          registry-url: 'https://npm.pkg.github.com'
+      - run: yarn npm publish
+        env:
+          YARN_NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
